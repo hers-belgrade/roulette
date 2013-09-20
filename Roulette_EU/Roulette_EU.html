@@ -1,0 +1,69 @@
+<!doctype html>
+<html ng-app>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+	<script src="roulette.js"></script>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+<div ng-controller="RouletteCtrl">
+<div ng-hide = "Condition">
+	<strong>Welcome to Roulette Room!</strong>
+	<input type="text" ng-model="Name" placeholder="Your name...">
+	<hr>
+	Currently, you have {{racun}} credit on your account
+	<br>
+	Add credit to start the game!
+	<br>
+	<input type="number" ng-model="kredit" placeholder="Amount">
+	<button ng-click="addKredit(kredit)">Add</button>
+</div>
+<div ng-show = "Condition">
+	<strong>Hi {{Name}}, enjoy the game and good luck!</strong>
+	<br>
+	You have {{racun}} credit on your account
+	<br>
+	<span>Increase Fast Bet (Currently {{brziUlog}}) and bet easier clicking on '+' button</span>
+	<input type="number" ng-model="brziUlog" placeholder="Brzi Ulog">
+	<br>
+	<div>
+		Current bets : {{userBets}}
+	</div>
+
+	<div id="random">
+		<strong>Current number : </strong>{{currentNumber}}
+		<br>
+		<strong>Previous numbers : </strong> {{prevNumbers | limitTo:-10}}
+	</div>
+	<br>
+	<span>{{Condition}}</span>
+	<br><br>
+	
+	<div> Total balance this round {{totalBalance}} </div>
+
+	<div >
+	<table>
+	<tr>
+	<td ng-repeat="bets in betTypes" valign='top'>
+	<span>{{bets.BType}}</span>
+			<span ng-repeat="id in bets.Serial">
+				{{bets.Serial[id]}}
+				<input type="number" ng-model="ulog" placeholder="Ulog" size="5" maxlength="5">
+				<button ng-click = "fillUserBets(bets.BType,bets.Serial[id],ulog)">Bet</button>
+				<button ng-click = "addFast(bets.BType,bets.Serial[id],brziUlog)">+</button>
+			<br>
+			</span>
+	</tr>
+	</table>
+	</div>
+
+</div>
+
+
+
+</div>
+</body>
+</html>
