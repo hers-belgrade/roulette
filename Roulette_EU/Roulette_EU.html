@@ -42,13 +42,13 @@
 	<span>{{Condition}}</span>
 	<br><br>
 	
-	<div> Total balance this round {{totalBalance}} </div>
+	<div> Total balance this round {{totalBalance}} <br> {{moze}}</div>
 
 	<div >
 	<table>
 	<tr>
 	<td ng-repeat="bets in betTypes" valign='top'>
-	<span>{{bets.BType}}</span>
+	<span><strong>{{bets.BName}}</strong><br></span>
 			<span ng-repeat="id in bets.Serial">
 				{{bets.Serial[id]}}
 				<input type="number" ng-model="ulog" placeholder="Ulog" size="5" maxlength="5">

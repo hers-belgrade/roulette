@@ -5,95 +5,16 @@ function BTypeToNumber(Btype,Serial,Bet){
 	{
 	case "S":
 		mp = 35;
-		switch(Serial){
-		case "00":brojevi = ['00'];
-		break;
-		case "0":brojevi = [0];
-		break;
-		case "1":brojevi = [1];
-		break;
-		case "2":brojevi = [2];
-		break;
-		case "3":brojevi = [3];
-		break;
-		case "4":brojevi = [4];
-		break;
-		case "5":brojevi = [5];
-		break;
-		case "6":brojevi = [6];
-		break;
-		case "7":brojevi = [7];
-		break;
-		case "8":brojevi = [8];
-		break;
-		case "9":brojevi = [9];
-		break;
-		case "10":brojevi = [10];
-		break;
-		case "11":brojevi = [11];
-		break;
-		case "12":brojevi = [12];
-		break;
-		case "13":brojevi = [13];
-		break;
-		case "14":brojevi = [14];
-		break;
-		case "15":brojevi = [15];
-		break;
-		case "16":brojevi = [16];
-		break;
-		case "17":brojevi = [17];
-		break;
-		case "18":brojevi = [18];
-		break;
-		case "19":brojevi = [19];
-		break;
-		case "20":brojevi = [20];
-		break;
-		case "21":brojevi = [21];
-		break;
-		case "22":brojevi = [22];
-		break;
-		case "23":brojevi = [23];
-		break;
-		case "24":brojevi = [24];
-		break;
-		case "25":brojevi = [25];
-		break;
-		case "26":brojevi = [26];
-		break;
-		case "27":brojevi = [27];
-		break;
-		case "28":brojevi = [28];
-		break;
-		case "29":brojevi = [29];
-		break;
-		case "30":brojevi = [30];
-		break;
-		case "31":brojevi = [31];
-		break;
-		case "32":brojevi = [32];
-		break;
-		case "33":brojevi = [33];
-		break;
-		case "34":brojevi = [34];
-		break;
-		case "35":brojevi = [35];
-		break;
-		case "36":brojevi = [36];
-		break;
-		}
+		brojevi = [parseInt(Serial)];
 		break;
 	case "D":
 		mp = 17;
 		switch(Serial){
-		case "00":brojevi = ['00',2];
+		case "0":brojevi = [0,1];
 		break;
-		case "0":brojevi = ['00',3];
+		case "1":brojevi = [0,2];
 		break;
-		case "1":brojevi = [0,1];
-		break;
-		case "2":brojevi = [0,2];
+		case "2":brojevi = [0,3];
 		break;
 		case "3":brojevi = [1,2];
 		break;
@@ -207,10 +128,12 @@ function BTypeToNumber(Btype,Serial,Bet){
 		break;
 		}
 		break;
-	case "TL":
+	case "T":
 		mp = 11; 
 		switch(Serial){
-		case "0":brojevi = ['00',0,1,2,3];
+		case "0":brojevi = [0,1,2];
+		break;
+		case "1":brojevi = [0,2,3];
 		break;
 		}
 		break;
@@ -246,11 +169,7 @@ function BTypeToNumber(Btype,Serial,Bet){
 	case "B":
 		mp = 8;
 		switch(Serial){
-		case "0":brojevi = [0,1,2];
-		break;
-		case "1":brojevi = ['00',0,2];
-		break;
-		case "2":brojevi = ['00',2,3];
+		case "0":brojevi = [0,1,2,3];
 		break;
 		}
 		break;
@@ -379,31 +298,82 @@ function BTypeToNumber(Btype,Serial,Bet){
 		break;
 		}
 		break;
-	case "Z":
-		mp = 29/7;
+	case "NB":
+		mp = 1;
 		switch(Serial){
-		case "0":brojevi = [12,35,3,26,0,32,15];
+		case "0":brojevi = [3,26,0,32,15];
 		break;
-		}
+		case "1":brojevi = [26,0,32,15,19];
 		break;
-	case "WZ":
-		mp = 19/17;
-		switch(Serial){
-		case "0":brojevi = [22,18,29,7,28,12,35,3,26,0,32,15,19,4,21,2,25];
+		case "2":brojevi = [0,32,15,19,4];
 		break;
-		}
+		case "3":brojevi = [32,15,19,4,21];
 		break;
-	case "ORPH":
-		mp = 3;
-		switch(Serial){
-		case "0":brojevi = [17,34,6,1,20,14,31,9];
+		case "4":brojevi = [15,19,4,21,2];
 		break;
-		}
+		case "5":brojevi = [19,4,21,2,25];
 		break;
-	case "TOTW":
-		mp = 2;
-		switch(Serial){
-		case "0":brojevi = [27,13,36,11,30,8,23,10,5,24,16,33];
+		case "6":brojevi = [4,21,2,25,17];
+		break;
+		case "7":brojevi = [21,2,25,17,34];
+		break;
+		case "8":brojevi = [2,25,17,34,6];
+		break;
+		case "9":brojevi = [25,17,34,6,27];
+		break;
+		case "10":brojevi = [17,34,6,27,13];
+		break;
+		case "11":brojevi = [34,6,27,13,36];
+		break;
+		case "12":brojevi = [6,27,13,36,11];
+		break;
+		case "13":brojevi = [27,13,36,11,30];
+		break;
+		case "14":brojevi = [13,36,11,30,8];
+		break;
+		case "15":brojevi = [36,11,30,8,23];
+		break;
+		case "16":brojevi = [11,30,8,23,10];
+		break;
+		case "17":brojevi = [30,8,23,10,5];
+		break;
+		case "18":brojevi = [8,23,10,5,24];
+		break;
+		case "19":brojevi = [23,10,5,24,16];
+		break;
+		case "20":brojevi = [10,5,24,16,33];
+		break;
+		case "21":brojevi = [5,24,16,33,1];
+		break;
+		case "22":brojevi = [24,16,33,1,20];
+		break;
+		case "23":brojevi = [16,33,1,20,14];
+		break;
+		case "24":brojevi = [33,1,20,14,31];
+		break;
+		case "25":brojevi = [1,20,14,31,9];
+		break;
+		case "26":brojevi = [20,14,31,9,22];
+		break;
+		case "27":brojevi = [14,31,9,22,18];
+		break;
+		case "28":brojevi = [31,9,22,18,29];
+		break;
+		case "29":brojevi = [9,22,18,29,7];
+		break;
+		case "30":brojevi = [22,18,29,7,28];
+		break;
+		case "31":brojevi = [18,29,7,28,12];
+		break;
+		case "32":brojevi = [29,7,28,12,35];
+		break;
+		case "33":brojevi = [7,28,12,35,3];
+		break;
+		case "34":brojevi = [28,12,35,3,26];
+		break;
+		case "35":brojevi = [12,35,3,26,0];
+		break;
+		case "36":brojevi = [35,3,26,0,32];
 		break;
 		}
 		break;
@@ -412,9 +382,6 @@ function BTypeToNumber(Btype,Serial,Bet){
 		"brojevi" : brojevi,
 		"mp" : mp,
 		"bet" : Bet,
-		"win" : Bet*mp
+		"win" : Bet*(mp+1) 
 	};
 };
-
-var kocka = BTypeToNumber('D','42','500');
-console.log('Moguci brojevi : ' + kocka.brojevi + ". Na ulog od " + kocka.bet + " dobili ste : " + kocka.win );

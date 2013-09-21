@@ -42,22 +42,22 @@
 	<span>{{Condition}}</span>
 	<br><br>
 	
-	<div> Total balance this round {{totalBalance}} </div>
-
-	<div ng-repeat="bets in betTypes">
-	<ul>
-	<span>{{bets.BType}}</span>
-		<li>
+	<div> Total balance this round {{totalBalance}}<br>{{ajde}} </div>
+	<button ng-click = "randomNumber()">Load</button>
+	<div >
+	<table>
+	<tr>
+	<td ng-repeat="bets in betTypes" valign='top'>
+	<span><strong>{{bets.BName}}</strong><br></span>
 			<span ng-repeat="id in bets.Serial">
 				{{bets.Serial[id]}}
-				<input type="number" ng-model="ulog" placeholder="Ulog">
+				<input type="number" ng-model="ulog" placeholder="Ulog" size="5" maxlength="5">
 				<button ng-click = "fillUserBets(bets.BType,bets.Serial[id],ulog)">Bet</button>
 				<button ng-click = "addFast(bets.BType,bets.Serial[id],brziUlog)">+</button>
 			<br>
 			</span>
-			<hr>
-		</li>
-	</ul>
+	</tr>
+	</table>
 	</div>
 
 </div>

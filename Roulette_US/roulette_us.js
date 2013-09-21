@@ -30,9 +30,9 @@ function BTypeToNumber(Btype,Serial,Bet){
 	case "D":
 		mp = 17;
 		switch(Serial){
-		case "00":brojevi = ['00',2];
+		case "00":brojevi = [37,2];
 		break;
-		case "0":brojevi = ['00',3];
+		case "0":brojevi = [37,3];
 		break;
 		case "1":brojevi = [0,1];
 		break;
@@ -153,7 +153,7 @@ function BTypeToNumber(Btype,Serial,Bet){
 	case "TL":
 		mp = 11; 
 		switch(Serial){
-		case "0":brojevi = ['00',0,1,2,3];
+		case "0":brojevi = [37,0,1,2,3];
 		break;
 		}
 		break;
@@ -191,9 +191,9 @@ function BTypeToNumber(Btype,Serial,Bet){
 		switch(Serial){
 		case "0":brojevi = [0,1,2];
 		break;
-		case "1":brojevi = ['00',0,2];
+		case "1":brojevi = [37,0,2];
 		break;
-		case "2":brojevi = ['00',2,3];
+		case "2":brojevi = [37,2,3];
 		break;
 		}
 		break;
@@ -322,34 +322,6 @@ function BTypeToNumber(Btype,Serial,Bet){
 		break;
 		}
 		break;
-	case "Z":
-		mp = 29/7;
-		switch(Serial){
-		case "0":brojevi = [12,35,3,26,0,32,15];
-		break;
-		}
-		break;
-	case "WZ":
-		mp = 19/17;
-		switch(Serial){
-		case "0":brojevi = [22,18,29,7,28,12,35,3,26,0,32,15,19,4,21,2,25];
-		break;
-		}
-		break;
-	case "ORPH":
-		mp = 3;
-		switch(Serial){
-		case "0":brojevi = [17,34,6,1,20,14,31,9];
-		break;
-		}
-		break;
-	case "TOTW":
-		mp = 2;
-		switch(Serial){
-		case "0":brojevi = [27,13,36,11,30,8,23,10,5,24,16,33];
-		break;
-		}
-		break;
 	}
 	return{
 		"brojevi" : brojevi,
@@ -385,7 +357,8 @@ function Cycle(statearry){ //[{state:statecode,duration:msecs},{state:othercode,
 							if (_s == 'Announcing-NoBetsStill'){
 								$scope.randomNumber();
 								$scope.loadWins();
-								$scope.currentNumber = $scope.RNumber;
+								if($scope.randomNumber != 37){$scope.currentNumber = $scope.RNumber;}
+	else{$scope.currentNumber = "00";}
 							}
 							if (_s == 'PlaceBets'){
 								var d = new Date();
@@ -422,22 +395,18 @@ function Cycle(statearry){ //[{state:statecode,duration:msecs},{state:othercode,
 		
 //Igre
 	$scope.betTypes = [
-	{'BType':'S','Serial':[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36]},
-	{'BType':'D','Serial':[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57]},
-	{'BType':'T','Serial':[0,1]},
-	{'BType':'ST','Serial':[0,1,2,3,4,5,6,7,8,9,10,11]},
-	{'BType':'B','Serial':[0]},
-	{'BType':'Q','Serial':[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]},
-	{'BType':'SL','Serial':[0,1,2,3,4,5,6,7,8,9,10]},
-	{'BType':'DZ','Serial':[0,1,2]},
-	{'BType':'V','Serial':[0,1,2]},
-	{'BType':'O','Serial':[0,1]},
-	{'BType':'E','Serial':[0,1]},
-	{'BType':'C','Serial':[0,1]},
-	{'BType':'Z','Serial':[0]},
-	{'BType':'WZ','Serial':[0]},
-	{'BType':'ORPH','Serial':[0]},
-	{'BType':'TOTW','Serial':[0]},
+	{'BType':"S",'BName':'Straight','Serial':['00',0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36]},
+	{'BType':"D",'BName':'Split','Serial':['00',0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57]},
+	{'BType':"TL",'BName':'Top Line','Serial':[0]},
+	{'BType':"ST",'BName':'Street','Serial':[0,1,2,3,4,5,6,7,8,9,10,11]},
+	{'BType':"B",'BName':'Basket','Serial':[0,1,2]},
+	{'BType':"Q",'BName':'Corner','Serial':[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]},
+	{'BType':"SL",'BName':'Six line','Serial':[0,1,2,3,4,5,6,7,8,9,10]},
+	{'BType':"DZ",'BName':'Dozen','Serial':[0,1,2]},
+	{'BType':"V",'BName':'Column','Serial':[0,1,2]},
+	{'BType':"O",'BName':'Even or odd','Serial':[0,1]},
+	{'BType':"E",'BName':'1 to 18 / 19 to 36','Serial':[0,1]},
+	{'BType':"C",'BName':'Red or Black','Serial':[0,1]},
 	];
 
 	$scope.prevNumbers = [];
@@ -449,8 +418,12 @@ function Cycle(statearry){ //[{state:statecode,duration:msecs},{state:othercode,
 	$scope.randomNumber = function(){
 		switch($scope.Condition){
 		case 'Announcing-NoBetsStill':
-			$scope.RNumber = Math.floor(Math.random()*37);
-			$scope.prevNumbers.push($scope.RNumber);
+			$scope.RNumber = Math.floor(Math.random()*38);
+			if($scope.RNumber != 37){
+				$scope.prevNumbers.push($scope.RNumber);
+			}else{
+				$scope.prevNumbers.push("00");
+			}
 			break;
 		default:
 			break;

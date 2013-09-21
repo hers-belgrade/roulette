@@ -318,31 +318,82 @@ function BTypeToNumber(Btype,Serial,Bet){
 		break;
 		}
 		break;
-	case "Z":
-		mp = 29/7;
+	case "NB":
+		mp = 1;
 		switch(Serial){
-		case "0":brojevi = [12,35,3,26,0,32,15];
+		case "0":brojevi = [3,26,0,32,15];
 		break;
-		}
+		case "1":brojevi = [26,0,32,15,19];
 		break;
-	case "WZ":
-		mp = 19/17;
-		switch(Serial){
-		case "0":brojevi = [22,18,29,7,28,12,35,3,26,0,32,15,19,4,21,2,25];
+		case "2":brojevi = [0,32,15,19,4];
 		break;
-		}
+		case "3":brojevi = [32,15,19,4,21];
 		break;
-	case "ORPH":
-		mp = 3;
-		switch(Serial){
-		case "0":brojevi = [17,34,6,1,20,14,31,9];
+		case "4":brojevi = [15,19,4,21,2];
 		break;
-		}
+		case "5":brojevi = [19,4,21,2,25];
 		break;
-	case "TOTW":
-		mp = 2;
-		switch(Serial){
-		case "0":brojevi = [27,13,36,11,30,8,23,10,5,24,16,33];
+		case "6":brojevi = [4,21,2,25,17];
+		break;
+		case "7":brojevi = [21,2,25,17,34];
+		break;
+		case "8":brojevi = [2,25,17,34,6];
+		break;
+		case "9":brojevi = [25,17,34,6,27];
+		break;
+		case "10":brojevi = [17,34,6,27,13];
+		break;
+		case "11":brojevi = [34,6,27,13,36];
+		break;
+		case "12":brojevi = [6,27,13,36,11];
+		break;
+		case "13":brojevi = [27,13,36,11,30];
+		break;
+		case "14":brojevi = [13,36,11,30,8];
+		break;
+		case "15":brojevi = [36,11,30,8,23];
+		break;
+		case "16":brojevi = [11,30,8,23,10];
+		break;
+		case "17":brojevi = [30,8,23,10,5];
+		break;
+		case "18":brojevi = [8,23,10,5,24];
+		break;
+		case "19":brojevi = [23,10,5,24,16];
+		break;
+		case "20":brojevi = [10,5,24,16,33];
+		break;
+		case "21":brojevi = [5,24,16,33,1];
+		break;
+		case "22":brojevi = [24,16,33,1,20];
+		break;
+		case "23":brojevi = [16,33,1,20,14];
+		break;
+		case "24":brojevi = [33,1,20,14,31];
+		break;
+		case "25":brojevi = [1,20,14,31,9];
+		break;
+		case "26":brojevi = [20,14,31,9,22];
+		break;
+		case "27":brojevi = [14,31,9,22,18];
+		break;
+		case "28":brojevi = [31,9,22,18,29];
+		break;
+		case "29":brojevi = [9,22,18,29,7];
+		break;
+		case "30":brojevi = [22,18,29,7,28];
+		break;
+		case "31":brojevi = [18,29,7,28,12];
+		break;
+		case "32":brojevi = [29,7,28,12,35];
+		break;
+		case "33":brojevi = [7,28,12,35,3];
+		break;
+		case "34":brojevi = [28,12,35,3,26];
+		break;
+		case "35":brojevi = [12,35,3,26,0];
+		break;
+		case "36":brojevi = [35,3,26,0,32];
 		break;
 		}
 		break;
@@ -418,22 +469,23 @@ function Cycle(statearry){ //[{state:statecode,duration:msecs},{state:othercode,
 		
 //Igre
 	$scope.betTypes = [
-	{'BType':'S','Serial':[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36]},
-	{'BType':'D','Serial':[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57]},
-	{'BType':'T','Serial':[0,1]},
-	{'BType':'ST','Serial':[0,1,2,3,4,5,6,7,8,9,10,11]},
-	{'BType':'B','Serial':[0]},
-	{'BType':'Q','Serial':[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]},
-	{'BType':'SL','Serial':[0,1,2,3,4,5,6,7,8,9,10]},
-	{'BType':'DZ','Serial':[0,1,2]},
-	{'BType':'V','Serial':[0,1,2]},
-	{'BType':'O','Serial':[0,1]},
-	{'BType':'E','Serial':[0,1]},
-	{'BType':'C','Serial':[0,1]},
-	{'BType':'Z','Serial':[0]},
-	{'BType':'WZ','Serial':[0]},
-	{'BType':'ORPH','Serial':[0]},
-	{'BType':'TOTW','Serial':[0]},
+	{'BType':"S",'BName':'Straight','Serial':[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36]},
+	{'BType':"D",'BName':'Split','Serial':[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57]},
+	{'BType':"T",'BName':'Trio','Serial':[0,1]},
+	{'BType':"ST",'BName':'Street','Serial':[0,1,2,3,4,5,6,7,8,9,10,11]},
+	{'BType':"B",'BName':'Basket','Serial':[0]},
+	{'BType':"Q",'BName':'Corner','Serial':[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]},
+	{'BType':"SL",'BName':'Six line','Serial':[0,1,2,3,4,5,6,7,8,9,10]},
+	{'BType':"DZ",'BName':'Dozen','Serial':[0,1,2]},
+	{'BType':"V",'BName':'Column','Serial':[0,1,2]},
+	{'BType':"O",'BName':'Even or odd','Serial':[0,1]},
+	{'BType':"E",'BName':'1 to 18 / 19 to 36','Serial':[0,1]},
+	{'BType':"C",'BName':'Red or Black','Serial':[0,1]},
+	{'BType':"NB",'BName':'Neighbours','Serial':[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36]},
+	{'BType':"Z",'BName':'ZERO SPIEL','Serial':[0]},
+	{'BType':"WZ",'BName':'VOISINS DE ZERO','Serial':[0]},
+	{'BType':"ORPH",'BName':'ORPHELINS','Serial':[0]},
+	{'BType':"TOTW",'BName':'TIER','Serial':[0]},
 	];
 
 	$scope.prevNumbers = [];
@@ -486,16 +538,76 @@ function Cycle(statearry){ //[{state:statecode,duration:msecs},{state:othercode,
 		$scope.ajde = convert;
 	};
 	$scope.fillUserBets = function(BType,Serial,Ulog){
+		console.log(BType);
 		switch($scope.Condition){
-		case 'PlaceBets':
-			if(Ulog <= $scope.racun && Ulog > 0){
-				$scope.addBet($scope.userBets,BType,Serial,Ulog);
-				$scope.racun -= Ulog;
-				$scope.totalBalance -= Ulog;
-			}
-			break;
-		default :
-			//$window.alert('Be Patient and wait for next spin');
+			case 'PlaceBets':
+				switch(BType){
+				case 'Z':
+					if(Ulog <= $scope.racun && Ulog > 0){
+						$scope.addBet($scope.userBets,'D','2',Ulog);
+						$scope.addBet($scope.userBets,'D','22',Ulog);
+						$scope.addBet($scope.userBets,'S','26',Ulog);
+						$scope.addBet($scope.userBets,'D','56',Ulog);
+						$scope.racun -= Ulog*4;
+						$scope.totalBalance -= Ulog*4;
+					}
+				break;
+				case 'WZ':
+					if(Ulog <= $scope.racun && Ulog > 0){
+						$scope.addBet($scope.userBets,'T','1',Ulog*2);
+						$scope.addBet($scope.userBets,'D','9',Ulog);
+						$scope.addBet($scope.userBets,'D','22',Ulog);
+						$scope.addBet($scope.userBets,'D','32',Ulog);
+						$scope.addBet($scope.userBets,'D','34',Ulog);
+						$scope.addBet($scope.userBets,'Q','16',Ulog*2);
+						$scope.addBet($scope.userBets,'D','56',Ulog);
+						$scope.racun -= Ulog*9;
+						$scope.totalBalance -= Ulog*9;
+					}
+				break;
+				case 'TOTW':
+					if(Ulog <= $scope.racun && Ulog > 0){
+						$scope.addBet($scope.userBets,'D','11',Ulog);
+						$scope.addBet($scope.userBets,'D','18',Ulog);
+						$scope.addBet($scope.userBets,'D','24',Ulog);
+						$scope.addBet($scope.userBets,'D','40',Ulog);
+						$scope.addBet($scope.userBets,'D','47',Ulog);
+						$scope.addBet($scope.userBets,'D','57',Ulog);
+						$scope.racun -= Ulog*6;
+						$scope.totalBalance -= Ulog*6;
+					}
+				break;
+				case 'ORPH':
+					if(Ulog <= $scope.racun && Ulog > 0){
+						$scope.addBet($scope.userBets,'S','1',Ulog);
+						$scope.addBet($scope.userBets,'D','12',Ulog);
+						$scope.addBet($scope.userBets,'D','26',Ulog);
+						$scope.addBet($scope.userBets,'D','31',Ulog);
+						$scope.addBet($scope.userBets,'D','54',Ulog);
+						$scope.racun -= Ulog*5;
+						$scope.totalBalance -= Ulog*5;
+					}
+				break;
+				case 'NB':
+					if(Ulog <= $scope.racun && Ulog > 0){
+						var nizBrojeva = BTypeToNumber(BType,Serial,Ulog);
+						for (var i=0; i<nizBrojeva.brojevi.length ; i++){
+							$scope.addBet($scope.userBets,'S',nizBrojeva.brojevi[i].toString(),Ulog);
+						}
+						$scope.racun -= Ulog*5;
+						$scope.totalBalance -= Ulog*5;
+					}
+				break;
+				default:
+					if(Ulog <= $scope.racun && Ulog > 0){
+						$scope.addBet($scope.userBets,BType,Serial,Ulog);
+						$scope.racun -= Ulog;
+						$scope.totalBalance -= Ulog;
+					}
+				}
+				break;
+			default :
+				//$window.alert('Be Patient and wait for next spin');
 			break;
 		}
 	};
@@ -509,13 +621,74 @@ function Cycle(statearry){ //[{state:statecode,duration:msecs},{state:othercode,
 	$scope.addFast = function(BType,Serial,brziUlog){
 		switch($scope.Condition){
 		case 'PlaceBets':
-			if(brziUlog <= $scope.racun && brziUlog > 0){
-				$scope.addBet($scope.userBets,BType,Serial,brziUlog);
-				$scope.racun -= brziUlog;
-				$scope.totalBalance -= brziUlog;
-			}
-			break;
-		default:
+				switch(BType){
+				case 'Z':
+					if(Ulog <= $scope.racun && brziUlog > 0){
+						$scope.addBet($scope.userBets,'D','2',brziUlog);
+						$scope.addBet($scope.userBets,'D','22',brziUlog);
+						$scope.addBet($scope.userBets,'S','26',brziUlog);
+						$scope.addBet($scope.userBets,'D','56',brziUlog);
+						$scope.racun -= brziUlog*4;
+						$scope.totalBalance -= brziUlog*4;
+					}
+				break;
+				case 'WZ':
+					if(brziUlog <= $scope.racun && brziUlog > 0){
+						$scope.addBet($scope.userBets,'T','1',brziUlog*2);
+						$scope.addBet($scope.userBets,'D','9',brziUlog);
+						$scope.addBet($scope.userBets,'D','22',brziUlog);
+						$scope.addBet($scope.userBets,'D','32',brziUlog);
+						$scope.addBet($scope.userBets,'D','34',brziUlog);
+						$scope.addBet($scope.userBets,'Q','16',brziUlog*2);
+						$scope.addBet($scope.userBets,'D','56',brziUlog);
+						$scope.racun -= brziUlog*9;
+						$scope.totalBalance -= brziUlog*9;
+					}
+				break;
+				case 'TOTW':
+					if(brziUlog <= $scope.racun && brziUlog > 0){
+						$scope.addBet($scope.userBets,'D','11',brziUlog);
+						$scope.addBet($scope.userBets,'D','18',brziUlog);
+						$scope.addBet($scope.userBets,'D','24',brziUlog);
+						$scope.addBet($scope.userBets,'D','40',brziUlog);
+						$scope.addBet($scope.userBets,'D','47',brziUlog);
+						$scope.addBet($scope.userBets,'D','57',brziUlog);
+						$scope.racun -= brziUlog*6;
+						$scope.totalBalance -= brziUlog*6;
+					}
+				break;
+				case 'ORPH':
+					if(brziUlog <= $scope.racun && brziUlog > 0){
+						$scope.addBet($scope.userBets,'S','1',brziUlog);
+						$scope.addBet($scope.userBets,'D','12',brziUlog);
+						$scope.addBet($scope.userBets,'D','26',brziUlog);
+						$scope.addBet($scope.userBets,'D','31',brziUlog);
+						$scope.addBet($scope.userBets,'D','54',brziUlog);
+						$scope.racun -= brziUlog*5;
+						$scope.totalBalance -= brziUlog*5;
+					}
+				break;
+				case 'NB':
+					if(brziUlog <= $scope.racun && brziUlog > 0){
+						var nizBrojeva = BTypeToNumber(BType,Serial.toString(),brziUlog);
+						for (var i=0; i<nizBrojeva.brojevi.length ; i++){
+							$scope.addBet($scope.userBets,'S',nizBrojeva.brojevi[i].toString(),brziUlog);
+						}
+						$scope.moze = nizBrojeva;
+						$scope.racun -= brziUlog*5;
+						$scope.totalBalance -= brziUlog*5;
+				}
+				break;
+				default:
+					if(brziUlog <= $scope.racun && brziUlog > 0){
+						$scope.addBet($scope.userBets,BType,Serial,brziUlog);
+						$scope.racun -= brziUlog;
+						$scope.totalBalance -= brziUlog;
+					}
+				}
+				break;
+			default :
+				//$window.alert('Be Patient and wait for next spin');
 			break;
 		}
 	};
