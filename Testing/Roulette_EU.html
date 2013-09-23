@@ -1,7 +1,8 @@
 <!doctype html>
-<html ng-app>
+<html ng-app="roulette">
 <head>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+	<script src="http://code.angularjs.org/1.2.0rc1/angular.js"></script>
+    	<script src="http://code.angularjs.org/1.2.0rc1/angular-animate.min.js"></script>
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
 	<script src="roulette.js"></script>
@@ -11,7 +12,7 @@
 
 <body>
 <div class = "main" ng-controller="RouletteCtrl">
-<div ng-hide = "Condition">
+<div class = "intro" ng-hide = "Condition">
 	<strong>Welcome to Roulette Room!</strong>
 	<input type="text" ng-model="Name" placeholder="Your name...">
 	<hr>
@@ -30,8 +31,8 @@
 	<span>Increase Fast Bet (Currently {{brziUlog}}) and bet easier clicking on <i class="icon-plus-sign icon-large icon-black"></i> button</span>
 	<input class="fast-bet" type="number" ng-model="brziUlog" placeholder="Brzi Ulog">
 	<br>
-	<div>
-		Current bets : {{userBets}}
+	<div class = "user-bets" ng-repeat = "bets in userBets">
+		Current bets : {{bets}}
 	</div>
 
 	<div id="random">

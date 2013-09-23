@@ -19,7 +19,7 @@ Stanja
 
 */
 
-
+angular.module('roulette',['ngAnimate']);
 
 function BTypeToNumber(Btype,Serial,Bet){
 	brojevi = [];

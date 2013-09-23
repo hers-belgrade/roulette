@@ -1,0 +1,61 @@
+.main{
+	padding:30px;
+	border: 1px #ccc solid;
+}
+
+.game{
+	padding:10px;
+	border: 1px #999 solid;
+	border-radius: 5px;
+	box-shadow: 0px 0px 2px #aaa;
+	-webkit-box-shadow: 0px 0px 2px #aaa;
+	-moz-box-shadow: 0px 0px 2px #aaa;
+}
+
+.racun{
+	font-size:18px;
+}
+
+.bet-type{
+	border-right: 1px #ccc solid;
+	padding:5px;
+}
+
+.input-number{
+	width:75px;
+}
+
+.fast-bet{
+	width:30px;
+}
+
+}
+.game.ng-show-add , .game.ng-show-remove{
+	transition: 1s linear all;
+	-webkit-transition: linear 1s;
+	display: block!important;
+}
+
+.game.ng-show-add{
+	opacity:0;
+}
+.game.ng-show-add.ng-show-add-active{
+	opacity:1;
+}
+.game.ng-show-remove{
+	opacity:0;
+}
+.game.ng-show-remove.ng-show-remove-active{
+	opacity:1;
+}
+/*.intro.ng-show-remove{
+	opacity:1;
+}
+.intro.ng-show-remove-active{
+	opacity:0;
+}
+
+
+
+
+
